@@ -13,18 +13,18 @@ npm i -g sequelize-typescript-auto
 ## 使用
 
 ```text
-Usage: sequelize-typescript-auto [options]
+使用: sequelize-typescript-auto [选项]
 
-Options:
-  -V, --version              output the version number
-  -H, --host <host>          database host
-  -d, --database <database>  name of database
-  -u, --username <username>  user of database
-  -x, --password <password>  password of database
-  -p, --port <port>          port of database, default 3306 (default: 3306)
-  -o, --output <dir>         models output dir (default: "./models")
-  -f, --prefix <prefix>      to exclude table prefix (default: "")
-  -h, --help                 output usage information
+选项:
+  -V, --version              版本
+  -H, --host <host>          数据库地址
+  -d, --database <database>  数据库名称
+  -u, --username <username>  用户名
+  -x, --password <password>  密码
+  -p, --port <port>          数据库端口，默认为3306
+  -o, --output <dir>         model输出文件夹
+  -f, --prefix <prefix>      在文件名和model类名中过滤数据库前缀
+  -h, --help                 显示帮助信息
 ```
 
 ## 示例
