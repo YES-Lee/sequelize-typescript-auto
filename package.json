@@ -1,6 +1,6 @@
 {
   "name": "sequelize-typescript-auto",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "generate sequelize-typescript models from database",
   "main": "index.js",
   "bin": "bin/sequelize-typescript-auto",
