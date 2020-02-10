@@ -28,7 +28,7 @@ function STAuto(database, username, password, options) {
     local: 'sequelize',
     spaces: false,
     indentation: 2,
-    directory: './models',
+    output: './models',
     additional: {},
     freezeTableName: true,
     typescript: false,
@@ -77,7 +77,7 @@ STAuto.prototype.generate = function() {
 
   return new Promise((resolve, reject) => {
     async.each(tables, (tableName, cb) => {
-      const modelName = camelCase(tableName, { pascalCase: true })
+      const modelName = camelCase(this.options.prefix ? tableName.replace(this.options.prefix, '') : tableName, { pascalCase: true })
       const imports = {
         'sequelize-typescript': [
           'Model',
@@ -150,11 +150,11 @@ STAuto.prototype.generate = function() {
 
 STAuto.prototype.write = function() {
   const writeFileSpinner = ora('writing files').start()
-  if (!fs.existsSync(path.resolve(this.options.directory))) {
-    fs.mkdirSync(path.resolve(this.options.directory))
+  if (!fs.existsSync(path.resolve(this.options.output))) {
+    fs.mkdirSync(path.resolve(this.options.output))
   }
   async.eachOf(this.text, (table, tableName, cb) => {
-    const filePath = path.resolve(path.join(this.options.directory, `${camelCase(tableName, { pascalCase: true })}.model.ts`))
+    const filePath = path.resolve(path.join(this.options.output, `${camelCase(tableName, { pascalCase: true })}.model.ts`))
     const data = new Uint8Array(Buffer.from(table))
     fs.writeFileSync(filePath, data, { encoding: 'utf8' })
     cb()

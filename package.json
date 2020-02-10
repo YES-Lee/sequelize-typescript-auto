@@ -15,6 +15,16 @@
   ],
   "author": "Johnson",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/YES-Lee/sequelize-typescript-auto"
+  },
+  "contributors": [
+    {
+      "name": "Johnson",
+      "email": "yeslee1126@gmail.com",
+      "url": "https://johnsonlee.site"
+    }
+  ],
   "dependencies": {
     "async": "^3.1.1",
     "camelcase": "^5.3.1",

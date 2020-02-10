@@ -2,6 +2,7 @@
 const program = require('commander')
 const pkg = require('../package.json')
 const Auto = require('../')
+const path = require('path')
 
 program
 .name(pkg.name)
@@ -18,10 +19,17 @@ program
   .requiredOption('-u, --username <username>', 'user of database')
   .option('-x, --password <password>', 'password of database')
   .option('-p, --port <port>', 'port of database, default 3306', 3306)
-  .option('-o, --output <dir>', 'models output dir')
+  .option('-o, --output <dir>', 'models output dir', './models')
+  .option('-f, --prefix <prefix>', 'to exclude table prefix', '')
 
 program.parse(process.argv);
 
 const options = program.opts()
 
-const auto = new Auto(options)
+options.output = path.resolve(process.cwd(), options.output)
+
+const auto = new Auto(options.database, options.username, options.password, options)
+
+auto.run().then(() => {
+  process.exit(0)
+})
