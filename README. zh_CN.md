@@ -1,16 +1,16 @@
 # sequelize-typescript-auto
 
-English | [中文](https://github.com/YES-Lee/sequelize-typescript-auto/blob/master/README.zh_CN.md)
+[English](https://github.com/YES-Lee/sequelize-typescript-auto) | 中文
 
-Automatically generate models for sequelize-typescript
+从数据库自动生成`sequelize-typescript`的`model`
 
-## install
+## 安装
 
 ```bash
 npm i -g sequelize-typescript-auto
 ```
 
-## use
+## 使用
 
 ```text
 Usage: sequelize-typescript-auto [options]
@@ -27,7 +27,7 @@ Options:
   -h, --help                 output usage information
 ```
 
-## example
+## 示例
 
 ```bash
 sequelize-typescript-auto -H localhost -d test -u root -x 123456 -p 3306 -f test_ -o ./_models
