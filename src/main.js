@@ -15,7 +15,7 @@ function STAuto(database, username, password, options) {
   this.sequelize = new Sequelize(database, username, password, {
     dialect: 'mysql',
     ...(options || {}),
-    loggin: () => {},
+    logging: () => {},
     typescript: true
   });
 
@@ -108,7 +108,8 @@ STAuto.prototype.generate = function() {
         const colDecorators = []
         const colObj = this.tables[tableName][col]
         const colType = colObj.type.split('(')[0]
-        colDecorators.push(`${indentation}@Column(DataType.${colType})`)
+        colDecorators.push(`${indentation}@Column`)
+        // colDecorators.push(`${indentation}@Column(DataType.${colType})`)
 
         colDecorators.push(`${indentation}@Comment('${colObj.comment || ''}')`)
 
@@ -132,7 +133,7 @@ STAuto.prototype.generate = function() {
         tableText += `${indentation}${col}${colObj.allowNull ? '?' : ''}: ${utils.tsType(colType)};\n`
       })
   
-      tableText += `}`
+      tableText += `}\n`
       tableText = utils.importsString(imports) + '\n\n' + tableText
       text[modelName] = tableText
       cb()
