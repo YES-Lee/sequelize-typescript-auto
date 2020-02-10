@@ -1,0 +1,27 @@
+#! /usr/bin/env node
+const program = require('commander')
+const pkg = require('../package.json')
+const Auto = require('../')
+
+program
+.name(pkg.name)
+.version(`sequelize-typescript-auto version: ${pkg.version}
+developed by Johnson
+repository: 
+issues: 
+blog: https://johnsonlee.site
+`)
+
+program
+  .requiredOption('-H, --host <host>', 'database host')
+  .requiredOption('-d, --database <database>', 'name of database')
+  .requiredOption('-u, --username <username>', 'user of database')
+  .option('-x, --password <password>', 'password of database')
+  .option('-p, --port <port>', 'port of database, default 3306', 3306)
+  .option('-o, --output <dir>', 'models output dir')
+
+program.parse(process.argv);
+
+const options = program.opts()
+
+const auto = new Auto(options)
