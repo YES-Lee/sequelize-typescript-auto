@@ -11,7 +11,8 @@
     "sequelize",
     "sequelize-typescript",
     "model",
-    "database"
+    "database",
+    "orm"
   ],
   "author": "Johnson",
   "license": "MIT",
