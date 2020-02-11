@@ -35,11 +35,12 @@ sequelize-typescript-auto -H localhost -d test -u root -x 123456 -p 3306 -f test
 
 ## TODO
 
+* [x] support mysql
+* [x] cli usage
 * [ ] programing usage
 * [ ] map foreignkeys
 * [ ] hash check
 * [ ] generate countor
-* [ ] support typeorm
 * [ ] support SQL Server
 * [ ] support PostgreSQL
 

@@ -34,11 +34,12 @@ sequelize-typescript-auto -H localhost -d test -u root -x 123456 -p 3306 -f test
 ```
 ## TODO
 
+* [x] 支持 mysql
+* [x] 命令行使用
 * [ ] 编程方式使用
 * [ ] 生成外间约束关系
 * [ ] 检查文件哈希值
 * [ ] 生成计数器
-* [ ] 支持typeorm
 * [ ] 支持SQL Server
 * [ ] 支持PostgreSQL
 
