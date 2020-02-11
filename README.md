@@ -32,3 +32,17 @@ Options:
 ```bash
 sequelize-typescript-auto -H localhost -d test -u root -x 123456 -p 3306 -f test_ -o ./_models
 ```
+
+## TODO
+
+* [ ] programing usage
+* [ ] map foreignkeys
+* [ ] hash check
+* [ ] generate countor
+* [ ] support typeorm
+* [ ] support SQL Server
+* [ ] support PostgreSQL
+
+## License
+
+MIT: https://rem.mit-license.org
